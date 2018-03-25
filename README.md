@@ -1,4 +1,4 @@
-Create a .env file with the following contents, where ### is your Giphy API key created here: https://developers.giphy.com/dashboard/?create=true
+Create a .env file in the application root with the following contents, where ### is your Giphy API key created here: https://developers.giphy.com/dashboard/?create=true
 
 		GIPHY_API_KEY = ###
 
