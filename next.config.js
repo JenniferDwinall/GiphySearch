@@ -1,4 +1,5 @@
 var webpack = require('webpack')
+const { parsed: GIPHY_API_KEY } = require('dotenv').config()
 
 // Customize Next.js configuration options and Next.js webpack configuration here.
 // For config see - https://github.com/zeit/next.js#custom-configuration
@@ -19,6 +20,10 @@ module.exports = {
         test: /-test\.js$/,
         loader: 'ignore-loader'
       }
+    )
+
+    config.plugins.push(
+      new webpack.EnvironmentPlugin(GIPHY_API_KEY)
     )
 
     return config

@@ -21,6 +21,7 @@
     "@fortawesome/react-fontawesome": "^0.0.18",
     "babel-plugin-styled-components": "^1.5.1",
     "cucumber": "^4.0.0",
+    "dotenv": "^5.0.1",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^5.0.0",
     "react": "^16.2.0",
