@@ -15,9 +15,22 @@ class Trending extends Component {
     }
   }
 
-  componentWillMount () {
+  componentDidMount () {
+    const {
+      limit
+      // offset,
+      // rating
+    } = this.props
+
+    let params = {}
+    if (limit) params.limit = limit
+    // @TODO: Implement pagination.
+    // if (offset) params.offset = offset
+    // @TODO: Implement filters.
+    // if (rating) params.rating = rating
+
     const Giphy = new GiphyApiClient()
-    Giphy.trending()
+    Giphy.trending(params)
       .then((response) => {
         this.setState({
           data: response.data,
@@ -36,6 +49,7 @@ class Trending extends Component {
 
   render () {
     const {
+      modifier,
       title
     } = this.props
 
@@ -44,17 +58,21 @@ class Trending extends Component {
       data
     } = this.state
 
-    const {
-      status,
-      statusText
-    } = meta
+    if (!meta) {
+      throw new Error(`Trending GIFs are currently unavailable.  Please try again later.`)
+    } else {
+      const {
+        status,
+        statusText
+      } = meta
 
-    if (status && status !== 200) {
-      throw new Error(`${status} - ${statusText}`)
+      if (status && status !== 200) {
+        throw new Error(`${status} - ${statusText}`)
+      }
     }
     return (
       <Section title={title}>
-        <SearchResults items={data} />
+        <SearchResults items={data} modifier={modifier} />
       </Section>
     )
   }

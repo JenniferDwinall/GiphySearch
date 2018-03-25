@@ -14,7 +14,7 @@ export default function (props) {
   return (
     <CssMain>
       <ErrorBoundary title={title}>
-        <Search title={title} />
+        <Search title={title} modifier='fluid' />
       </ErrorBoundary>
     </CssMain>
   )

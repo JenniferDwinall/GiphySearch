@@ -10,6 +10,7 @@ export default function SearchBar (props) {
     phrase
   } = props
 
+  // @TODO: Autocomplete drop down is not appearing under input in Chrome.
   return (
     <form onSubmit={onSubmit}>
       <input

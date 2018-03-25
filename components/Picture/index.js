@@ -5,11 +5,11 @@ export default function Picture (props) {
     sources
   } = props
 
+  // @TODO: Make images responsive.
   return (
     <picture>
-      <source media='(min-width: 300px)' srcSet={sources.fixed_width.url} />
-      <source media='(min-width: 450px)' srcSet={sources.original.url} />
-      <img alt={sources.original.title} src={sources.original.url} />
+      <source media='(max-width: 1024px)' srcSet={sources.fixed_width.url} />
+      <img alt={sources.fixed_width.title} src={sources.fixed_width.url} />
     </picture>
   )
 }

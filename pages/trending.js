@@ -10,7 +10,7 @@ const Page = function () {
 
   return (
     <Layout {...pageProps}>
-      <ContentView />
+      <ContentView {...pageProps} />
     </Layout>
   )
 }

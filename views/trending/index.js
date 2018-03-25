@@ -14,7 +14,7 @@ export default function (props) {
   return (
     <CssMain>
       <ErrorBoundary title={title}>
-        <Trending title={title} />
+        <Trending title={title} modifier='fluid' />
       </ErrorBoundary>
     </CssMain>
   )

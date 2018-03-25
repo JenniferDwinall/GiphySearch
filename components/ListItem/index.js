@@ -10,11 +10,12 @@ import {
 export default function ListItem (props) {
   const {
     item,
+    modifier,
     type
   } = props
 
   return (
-    <CssLi>
+    <CssLi modifier={modifier}>
       <Component type={type} item={item} />
     </CssLi>
   )

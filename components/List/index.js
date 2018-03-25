@@ -6,6 +6,7 @@ import ListItem from 'components/ListItem'
 export default function List (props) {
   const {
     items,
+    modifier,
     tag: Tag,
     type
   } = props
@@ -18,7 +19,7 @@ export default function List (props) {
 
   return (
     <CssTag>{
-      items.map((item, key) => <ListItem item={item} key={key} type={type} />)
+      items.map((item, key) => <ListItem item={item} key={key} type={type} modifier={modifier} />)
     }</CssTag>
   )
 }

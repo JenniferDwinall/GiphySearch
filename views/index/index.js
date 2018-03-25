@@ -1,4 +1,5 @@
 import ErrorBoundary from 'components/ErrorBoundary'
+import NoSSR from 'react-no-ssr'
 
 import Search from 'components/Search'
 import Trending from 'components/Trending'
@@ -14,14 +15,18 @@ export default function () {
   return (
     <CssMain>
       <CssSection>
-        <ErrorBoundary title='Search'>
-          <Search />
-        </ErrorBoundary>
+        <NoSSR>
+          <ErrorBoundary title='Search'>
+            <Search modifier='fluid' limit='6' />
+          </ErrorBoundary>
+        </NoSSR>
       </CssSection>
       <CssAside>
-        <ErrorBoundary title='Trending GIFs'>
-          <Trending title='Trending GIFs' />
-        </ErrorBoundary>
+        <NoSSR>
+          <ErrorBoundary title='Trending GIFs'>
+            <Trending title='Trending GIFs' limit='5' modifier='oneColumn' />
+          </ErrorBoundary>
+        </NoSSR>
       </CssAside>
       <CssClearFloat />
     </CssMain>

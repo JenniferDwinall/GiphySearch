@@ -19,9 +19,28 @@ class Search extends Component {
   }
 
   render () {
-    const { phrase } = this.state
-    const history = this.props.history || []
-    const results = this.state.data || []
+    const {
+      history,
+      modifier
+    } = this.props
+
+    const {
+      data,
+      meta,
+      phrase
+    } = this.state
+
+    if (meta) {
+      const {
+        status,
+        statusText
+      } = meta
+
+      if (status && status !== 200) {
+        throw new Error(`${status} - ${statusText}`)
+      }
+    }
+
     return (
       <Section title='Search' >
         <SearchBar
@@ -30,8 +49,8 @@ class Search extends Component {
           onChange={this.onChange}
           phrase={phrase}
         />
-        <SearchHistory items={history} />
-        <SearchResults items={results} phrase={phrase} />
+        <SearchHistory items={history} modifier='fluid' />
+        <SearchResults items={data || []} phrase={phrase} modifier={modifier} />
       </Section>
     )
   }
@@ -50,11 +69,22 @@ class Search extends Component {
     if (!phrase) return false
 
     const {
+      limit,
+      // offset,
       onSearch
+      // rating
     } = this.props
 
+    let params = {}
+    if (phrase) params.q = phrase
+    if (limit) params.limit = limit
+    // @TODO: Implement pagination.
+    // if (offset) params.offset = offset
+    // @TODO: Implement filters.
+    // if (rating) params.rating = rating
+
     const Giphy = new GiphyApiClient()
-    Giphy.search({ q: phrase })
+    Giphy.search(params)
       .then((response) => {
         this.setState({
           data: response.data,

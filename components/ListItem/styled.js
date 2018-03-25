@@ -1,5 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const CssLi = styled.li`
-  display: inline-block;
+  ${props => (props.modifier === 'oneColumn') && css`
+    display: block;
+  `}
+  ${props => (props.modifier === 'fluid') && css`
+    display: inline-block;
+  `}
 `
