@@ -1,11 +1,11 @@
-import ContentView from 'views/Index/index'
+import ContentView from 'views/Search'
 import Layout from 'components/Layout'
 
 import withData from 'lib/withData'
 
 const Page = function () {
   const pageProps = {
-    title: 'Homepage'
+    title: 'Search'
   }
 
   return (

@@ -5,8 +5,8 @@ export default function (props) {
     items
   } = props
 
-  if (items.length) {
-    return <List tag='ul' items={items} type='Giphy' />
+  if (items) {
+    return <List tag='ul' items={items} type='History' />
   }
   return null
 }

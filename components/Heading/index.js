@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types'
 
-// import CssHeading from './styled'
-
 const headings = [
   'h1',
   'h2',

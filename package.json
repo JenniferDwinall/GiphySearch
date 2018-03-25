@@ -16,15 +16,25 @@
     "yarn": "1.3.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@fortawesome/react-fontawesome": "^0.0.18",
+    "babel-plugin-styled-components": "^1.5.1",
+    "cucumber": "^4.0.0",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
     "styled-components": "^3.2.3"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^3.1.0",
     "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-dom": "^1.7.0",
+    "chai-webdriver": "^1.2.0",
     "standard": "^11.0.1"
   }
 }

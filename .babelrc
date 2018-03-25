@@ -9,6 +9,9 @@
         "store": "./store",
         "views": "./views"
       }
+    }],
+    ["styled-components", {
+      "ssr": true
     }]
   ]
 }
